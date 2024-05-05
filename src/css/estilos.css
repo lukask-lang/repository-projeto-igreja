@@ -1,0 +1,222 @@
+body {
+    background-color: #000000;
+    overflow: hidden;
+}
+
+/* Animação Surgir da Direita*/                                       
+main .nome-igreja, .titulo-texto, .texto-descricao { 
+    animation-duration: 1s;               /*   📌Observações:                                                          */
+    animation-name: surgir_da_direita;    /* Tive dificuldades para "Controlar" o "titulo-texto", pois por algum motivo */
+}                                         /* ele não quer entrar na animação. E ainda não consegui achar o problema!    */
+@keyframes surgir_da_direita{
+    from {
+      margin-left: 100%;
+      width: 300%;
+    }
+    to {
+      margin-left: 0%;
+      width: 300%;
+    }
+} /*Fim da Animação*/
+
+/*Animação Zoom Menos*/
+main .secao .imagem{
+    animation-duration: 1s;
+    animation-name: zoom_menos;
+}
+
+@keyframes zoom_menos {
+    from {
+        height: 150%;
+        width: 150%;
+        object-fit: cover;
+    }
+    to {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+    }
+}
+
+main .secao {
+    display: none;
+    height: 100vh;
+}
+
+main .secao.selecionada {
+    display: block;
+}
+
+main .secao .imagem {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+/* 
+❌main .topico {
+    position: absolute;
+    left: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 100vh;
+    max-width: 100px;
+} */
+
+/* 
+❌main .topico .nome-topico {
+    left: 120px;
+    font-size: 24px;
+    color: #ffffff;
+    font-family: "Rubik";
+    font-weight: 200;
+    margin-bottom: 20px;
+} */
+
+.div-conteudo {
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.3);
+    margin: 20px;
+    top: 0;
+    right: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: baseline;
+    min-height: 100vh;
+    max-width: 800px;
+    z-index: 1;
+}
+
+.div-conteudo .nome-igreja {
+    color: #e5ff00;
+    margin: 5px;
+    font-size: 50px;
+    font-family: "Secular One";
+    font-weight: 400;
+    margin-bottom: 20px;
+}
+/* .div-conteudo #nome-igreja-rank {
+    color: #ffae00;
+    font-size: 48px;
+    font-family: "Secular One";
+    font-weight: 400;
+    margin-bottom: 20px;
+} */
+
+.div-conteudo .titulo-texto {
+    color: #ffffff;
+    font-size: 46px;
+    text-decoration: underline;
+    font-family: "Rubik";
+    font-weight: 400;
+    text-align: center;
+    margin-bottom: 10px;
+}
+/* .div-conteudo #titulo-texto-rank {
+    color: #000000;
+    font-size: 36px;
+    text-decoration: underline;
+    font-family: "Rubik";
+    font-weight: 400;
+    text-align: center;
+    margin-bottom: 40px;
+} */
+
+.div-conteudo .texto-descricao {
+    color: #ffffff;
+    text-align: center;
+    margin: 10px;
+    font-family: "Rubik";
+    font-size: 44px;
+    line-height: 50px;
+}
+/* .div-conteudo #texto-descricao-rank {
+    color: #000000;
+    font-family: "Rubik";
+    font-size: 38px;
+    line-height: 44px;
+} */
+
+
+/* .div-logo {
+    position: absolute;
+    top: 0;
+    right: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    min-height: 120vh;
+    max-width: 800px;
+    z-index: 1;
+}
+.div-logo .logo-casa-de-oracao {
+    background-image: url("../imgs/logo-two-casa-de-oracao.png");
+    background-size: cover;
+    right: 100px;
+    height: 190px;
+    width: 800px;
+    margin-bottom: 170px;
+} */
+
+
+
+
+
+/* 
+❌.div-topicos {
+    position: absolute;
+    left: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 100vh;
+    max-width: 100px;
+} */
+
+/* 
+❌.div-conteudo .topico {
+    position: relative;
+    left: 120px;
+    color: #ffffff;
+    font-family: "Rubik";
+    font-weight: 200;
+    margin-bottom: 20px;
+} */
+
+.ul-botoes {
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    width: 180px;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+.ul-botoes .botao {
+    border: none;
+    width: 100px;
+    background: #430249;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+.ul-botoes .botao img {
+    border-radius: 50%;
+    height: 90px;
+    width: 86px;
+}
+
+.ul-botoes .botao.selecionado {
+    transform: scale(1.3);
+    box-shadow: 0 0 10px #d9d9d9;
+}
+
+.ul-botoes .topicos .topico {
+    left: 200px;
+}
